@@ -1,0 +1,101 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Dashboard {% endblock %} 
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+<div class="row">
+
+  <div class="col-12">
+    <div class="card card-chart">
+      <div class="row">
+        <div class="col-lg-6 col-md-12">
+          <div class="card card-tasks" style="height: 6rem; ">
+            <div class="card-header ">
+              <h4 class="title d-inline">Enter your pdf here</h4>
+            </div>
+            <div class="card-body ">
+              <!-- <label class="form-label" for="customFile">Default file input example</label> -->
+              <form method="POST" action="/index" enctype="multipart/form-data" class="row g-3">
+                <div class="col-auto">         
+                  <input type="file" class="form-control" id="customFile" name = "file"/>
+                </div>
+                <div class="col-auto" style="size:100px; margin:5px;">
+                  <input type="submit" onclick="$('#loading').show();"/>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+</div>
+
+<div class="row">
+  <div class="col-lg-6 col-md-12">
+    <div class="card card-tasks">
+      <div class="card-header ">
+        <h4 class="title d-inline">Summary</h4>
+      </div>
+      <br>
+      <p class="card-text" style="margin-left:14px">{{ sumtxt }}</p>
+    </div> 
+  </div>
+  <div class="col-lg-6 col-md-12">
+    <div class="card ">
+      <div class="card-header">
+        <h4 class="card-title"> Simple Table</h4>
+      </div>
+      <div class="card-body">
+        <div class="table-responsive">
+          <table class="table tablesorter " id="">
+            <thead class=" text-primary">
+              <tr>
+                <th>
+                  Index
+                </th>
+                <th>
+                  Keyword
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for i in range(keylen) %}
+              <tr>
+                <td>
+                  {{ i+1 }}
+                </td>
+                <td>
+                  {{ keyword[i] }}
+                </td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+   
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}
+
+  <script>
+    $(document).ready(function() {
+      // Javascript method's body can be found in assets/js/demos.js
+      demo.initDashboardPageCharts();
+
+    });
+  </script>
+
+{% endblock javascripts %}

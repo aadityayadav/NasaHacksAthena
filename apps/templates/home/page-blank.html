@@ -1,0 +1,29 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} PDF Viewer {% endblock %} 
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card card-profile">
+                <div class="card-body">
+                    <h6 class="card-category text-gray">Viewer</h6>
+                    <h4 class="card-title">
+                        PDF Text Extractor
+                    </h4>
+                    <a href="/index" class="btn btn-primary btn-round">Home</a>
+                    <br><br><br><br>
+                    <p>{{ content }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}{% endblock javascripts %}

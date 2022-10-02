@@ -1,0 +1,49 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} About Athena {% endblock %} 
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+
+<div class="col-12">
+  <div class="card card-chart">
+    <div class="row">
+      <div class="col-lg-28 col-md-12">
+        <div class="card card-tasks" style="height: 60rem;">
+          <div class="card-header ">
+            <h1 class="card-title align-middle">ABOUT ATHENA</h1>
+            <hr>
+          </div>
+          <div class="card-body " style="margin:12px">
+            <h3 class="card-title">HIGH-LEVEL PROJECT SUMMARY</h3>
+            <p class="text-success">ATHENA is a beautiful software that provides an abstractive summary to any NASA research available in the NTRS database. It is a highly advanced Natural Language Processing model that is able to understand information, and summarize it in its own words so researchers do not have to spend long hours going through papers that might not be of use to them. It also provides a list of top keywords used in the research paper. We have also built a pdf extractor that pulls out all the text from the pdf if the user wants to view the whole document's text. We have provided a beautiful User Interface for you to try out ATHENA!</p>
+            <h3 class="card-title">What exactly does it do?</h3>
+            <p class="text-success">Our software solves the challenge of "Can AI preserve our science legacy". We have successfully used NLPs to provide a useful and comprehensive overview of any NASA research without having to go through, or even open the research papers.</p>
+            <h3 class="card-title">How does it work?</h3>
+            <p class="text-success">For testing out our model, We have already uploaded a bunch of pdfs extracted from the NTRS database. You can choose any of the available pdfs on the website and easily test our model. Upon selecting a pdf, you will see the summary along with the top keywords appear on the screen. If the summary aligns with your research needs, you can use the associated keywords to find more such related pdfs.
+
+
+
+              NOTE: Many of NASA's pdfs are not stored in the right format, they are very blurry scanned images which are difficult to extract. Due to the time constraints of this hackathon, we have built our NLP for well documented pdfs. However, an NER recognition NLP can be integrated in this project's pipeline if it were to be expanded.</p>
+            <h3 class="card-title">What benefits does it have?</h3>
+            <p class="text-success">This saves researchers a lot of time. If this was to be integrated with the NTRS database, then it can use its API to dynamically pick pdfs (instead of us having pdfs uploaded on the front-end, which we have done right now for ease of testing our project).</p>
+            <h3 class="card-title">What do you hope to achieve?</h3>
+            <p class="text-success">We hope that this software will have a positive impact on the usability of the NTRS database. We sincerely believe that this will greatly ease the work of researchers who are trying to skim through researches to decide which one suits them the most.</p>
+            <h3 class="card-title">What tools, coding languages, hardware, or software did you use to develop your project?</h3>
+            <p class="text-success">For the model, We used HuggingFace's extensive NLP library to understand what suits our needs for abstractive summarization and keyword extraction. For the backend, we used Flask to integrate all our components together along with HTML and CSS for the front end</p>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+</div>
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}{% endblock javascripts %}

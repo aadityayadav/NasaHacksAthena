@@ -1,0 +1,63 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} List PDF {% endblock %} 
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+<div class="row">
+  <div class="col-md-12">
+    <div class="card ">
+      <div class="card-header">
+        <h4 class="card-title"> Simple Table</h4>
+      </div>
+      <div class="card-body">
+        <div class="table-responsive">
+          <table class="table tablesorter " id="">
+            <thead class=" text-primary">
+              <tr>
+                <th>
+                  Index
+                </th>
+                <th>
+                  PDF Name
+                </th>
+                <th class="text-center">
+                  Generate Summary/Keywords
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for i in range(nlen) %}
+              <tr>
+                <td>
+                  {{ i+1 }}
+                </td>
+                <td>
+                  <form action="">
+                    <a href="/{{ names[i] }}" onclick="this.closest('form').submit();return true;$('#loading').show();;">
+                      {{ names[i] }}
+                    </a>
+                </form>
+                </td>
+                <td class="text-center">
+                  <form method="POST" action="/index">
+                    <input type="hidden" name="localFile" value= {{ names[i] }} />
+                    <input type="submit" value="Click Here" onclick="$('#loading').show();"/>
+                </form>
+                </td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}{% endblock javascripts %}

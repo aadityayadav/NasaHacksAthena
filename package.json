@@ -1,0 +1,21 @@
+{
+    "name": "black-dashboard-flask",
+    "mastertemplate": "boilerplate-code-flask-dashboard",
+    "version": "1.0.4",
+    "description": "Template project - Flask Boilerplate Code ",
+    "scripts": {},
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/aadityayadav/NasaHacks-Athenak"
+    },
+    "bugs": {
+        "url": "https://github.com/aadityayadav/NasaHacks-Athena",
+        "email": "support@appseed.us"
+    },
+    "author": "Aaditya&Ojas / Athena",
+    "engines": {
+        "node": ">=10.0.0"
+    },
+    "dependencies": {},
+    "devDependencies": {}
+}
